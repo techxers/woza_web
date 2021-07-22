@@ -31,7 +31,7 @@
                             </div>
                         @empty
                         <div class="content-align-center">
-                            <h6>We could not find a match for "{{$id}}"</h6>
+                            <h6>We could not find a match for "{{$id}}" within your location</h6>
                             <a href="/#products-sale-tab" class="btn btn-success">View other services</a>
                         </div>
                           

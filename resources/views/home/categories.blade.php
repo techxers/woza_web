@@ -14,7 +14,11 @@
     </nav><!-- End .breadcrumb-nav -->
     <div class="page-content">
         <div class="banner-group-1 mt-1 mb-1">
-        
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{session('error')}}
+                </div>
+            @endif
             <div class="container">
              
                 <div class="cat-section mt-4 mb-3">
@@ -33,7 +37,7 @@
                             </div>
                         @empty
                         <div class="content-align-center">
-                            <h6>We could not find a match for "{{$id}}"</h6>
+                            <h6>We could not find a match for "{{$id}}" within your location</h6>
                             <a href="/" class="btn btn-success">View all shops</a>
                         </div>
                           

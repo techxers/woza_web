@@ -167,16 +167,13 @@
 
     <div class="container">
         <div class="heading heading-center mb-3">
-            <h2 class="title">Popular Shops and Services</h2><!-- End .title -->
-
+            <h2 class="title">Popular Shops and Services in Woza</h2><!-- End .title -->
             <ul class="nav nav-pills nav-border-anim justify-content-center" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="top-all-link" data-toggle="tab" href="#top-all-tab" role="tab" aria-controls="top-all-tab" aria-selected="true">Top 10</a>
                 </li>
-               
             </ul>
         </div><!-- End .heading -->
-
         <div class="tab-content">
             <div class="tab-pane p-0 fade show active" id="top-all-tab" role="tabpanel" aria-labelledby="top-all-link">
                 <div class="products">
@@ -185,7 +182,11 @@
                      <div class="col-6 col-md-4 col-lg-3 col-xl-5col">
                         <div class="product product-11 text-center">
                             <figure class="product-media">
+                                @if (Cookie::get('name') === null)
+                                <a href="#address" data-toggle="modal">
+                                @else
                                 <a href="{{route('products.shop',$item->id)}}">
+                                @endif
                                     <img src="{{asset('images/'.$item->logo)}}" alt="Product image" class="product-image">
                                     <img src="{{asset('images/'.$item->logo)}}" alt="Product image" class="product-image-hover">
                                 </a>
@@ -197,9 +198,17 @@
 
                             <div class="product-body">
                                 <div class="product-cat">
-                                    <a href="#">{{$item->category}}</a>
+                                    <a href="">{{$item->category}}</a>
                                 </div><!-- End .product-cat -->
-                                <h3 class="product-title"><a href="{{route('products.shop',$item->id)}}">{{$item->title}}</a></h3><!-- End .product-title -->
+                                <h3 class="product-title">
+                                    @if (Cookie::get('name') === null)
+                                    <a href="#address" data-toggle="modal">
+                                    @else
+                                    <a href="{{route('products.shop',$item->id)}}">
+                                    @endif
+                                        {{$item->title}}
+                                    </a>
+                                </h3><!-- End .product-title -->
                                 <div class="product-price">
                                   Kshs {{$item->pricing}}
                                 </div><!-- End .product-price -->
@@ -207,7 +216,9 @@
                         </div><!-- End .product -->
                     </div>
                      @empty
-                         No shops to display
+                     
+                         No shops or services to display
+                   
                      @endforelse
 
                        <!-- End .col-sm-6 col-md-4 col-lg-3 -->

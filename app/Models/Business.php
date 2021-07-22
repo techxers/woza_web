@@ -11,6 +11,8 @@ class Business extends Model
 
     protected $table="business";
 
+    public $timestamps=false;
+
     public function products()
     {
         return $this->hasMany(Product::class);
@@ -18,5 +20,25 @@ class Business extends Model
     public function category()
     {
         return $this->belongsTo(Category::class,'category_id');
+    }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class,'to');
+    }
+    public function paymenttype()
+    {
+        return $this->hasOne(PaymentType::class,'business_id');
     }
 }

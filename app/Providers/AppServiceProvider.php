@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Cart;
+use App\Models\Country;
+use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
@@ -36,9 +38,13 @@ class AppServiceProvider extends ServiceProvider
             View::share('totalPrice',$cart->totalPrice);
         }
 
-
+        $countries= Country::all();
+        View::share('countries',$countries);
+        $services=Category::where('type',0)->get();
+        View::share('services',$services);
+        $shops=Category::where('type',1)->get();
+        View::share('shops',$shops);
         Paginator::useBootstrap();
-      
-      
+    
     }
 }

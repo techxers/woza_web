@@ -11,6 +11,18 @@ class Order extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
+    }
+    public function shop()
+    {
+        return $this->belongsTo(Business::class,'business_id');
+    }
+    public function orderitems()
+    {
+        return $this->hasMany(Order_Item::class);
+    }
+    public function boda()
+    {
+        return $this->belongsTo(User::class,'bodaid','userId');
     }
 }

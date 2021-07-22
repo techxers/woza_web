@@ -24,7 +24,9 @@ class User extends Authenticatable
         'mobile',
         'user_type',
         'roleId',
+        'uType',
         'password',
+        'country_code'
     ];
 
     /**
@@ -51,5 +53,29 @@ class User extends Authenticatable
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+    public function address()
+    {
+       return $this->hasOne(Address::class);
+    }
+    public function business()
+    {
+        return $this->hasOne(Business::class,'user_id');
+    }
+    public function sentnotifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+    public function receivednotifications()
+    {
+        return $this->hasMany(Notification::class,'to');
+    }
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+    public function order()
+    {
+        return $this->hasMany(Order::class,'userId','bodaid');
     }
 }
