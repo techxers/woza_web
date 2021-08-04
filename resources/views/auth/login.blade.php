@@ -38,6 +38,7 @@
                         @endforeach
                     @endif
                     @csrf
+<<<<<<< HEAD
                     <div class="row">
                         <div class="col-md-4">
                             <select name="country_code" id="" class="form-control" >
@@ -50,12 +51,19 @@
                             <input type="number" name="mobile" class="form-control" placeholder="Phone Number" required>
                         </div>
                     </div>
+=======
+                    <input type="number" class="form-control" placeholder="Phone Number" name="mobile" required>
+>>>>>>> c58067757b236780538d183e32fcd1e8bc8e80f4
                     <input type="password" class="form-control" placeholder="Password" name="password" required>
 
                     <div class="form-footer">
                         <button type="submit" class="btn btn-primary">LOGIN</button>
                         <a href="{{route('password.forgot')}}" class="forget-pass"> Forgot your password?</a> <br>
+<<<<<<< HEAD
                        <span class="ml-5 pl-5">Not yet registered?<a href="{{route('signup')}}" class="forget-pass"> Create Account</a> 
+=======
+                       <span class="ml-5 pl-5">Not yet registered?<a href="{{route('register')}}" class="forget-pass"> Create Account</a> 
+>>>>>>> c58067757b236780538d183e32fcd1e8bc8e80f4
                     </div><!-- End .form-footer -->
                 </form>
                 <div class="form-choice">
