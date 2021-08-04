@@ -29,7 +29,7 @@
     <link href="{{asset('partner/vendor/slick/slick.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('partner/vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('partner/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
-    <link rel="icon" type="image/x-icon" href="{{asset('images/icon/woza.jpg')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('images/icon/woza3.jpg')}}">
     <link href="{{asset('woza/assets/css/google.css')}}" rel="stylesheet">
     <!-- Main CSS-->
     <link href="{{asset('partner/css/theme.css')}}" rel="stylesheet" media="all">
@@ -95,12 +95,11 @@
             </nav>
         </header>
         <!-- END HEADER MOBILE-->
-
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="{{route('partner.dashboard')}}">
-                    <img src="{{asset('images/icon/woza.jpg')}}" alt="" width="50" />
+                    <img src="{{asset('images/icon/woza3.jpg')}}" alt="" width="50" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">

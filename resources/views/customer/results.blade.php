@@ -4,7 +4,8 @@
 
 <main class="main">
     <div class="category-banner-container bg-gray">
-        <div class="category-banner banner text-uppercase" style="background: no-repeat 60%/cover url('assets/images/banners/banner-top.jpg');">
+        <?php $i=random_int(1,20);?>
+        <div class="category-banner banner text-uppercase" style="background: no-repeat 60%/cover url({{asset('woza/assets/images/splash/splash'.$i.'.jpg')}});">
             <div class="container position-relative">
                 <div class="row">
                     <div class="pl-lg-5 pb-5 pb-md-0 col-md-5 col-xl-4 col-lg-4 offset-1">
@@ -20,7 +21,7 @@
     <div class="container">
         <nav aria-label="breadcrumb" class="breadcrumb-nav">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index-2.html"><i class="icon-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="/"><i class="icon-home"></i></a></li>
                 <li class="breadcrumb-item"><a href="#">Search</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{$query}}</li>
             </ol>

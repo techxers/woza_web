@@ -7,7 +7,8 @@
 @section('content')
 <main class="main">
     <div class="category-banner-container bg-gray">
-        <div class="category-banner banner text-uppercase" style="background: no-repeat 60%/cover url('assets/images/banners/banner-top.jpg');">
+        <?php $i=random_int(1,20);?>
+        <div class="category-banner banner text-uppercase" style="background: no-repeat 60%/cover url({{asset('woza/assets/images/splash/splash'.$i.'.jpg')}});">
             <div class="container position-relative">
                 <div class="row">
                     <div class="pl-lg-5 pb-5 pb-md-0 col-md-5 col-xl-4 col-lg-4 offset-1">

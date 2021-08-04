@@ -73,16 +73,7 @@
                     }
                 }">
                 @foreach ($featured_products as $item)
-                {{-- <div class="banner banner1 banner-hover-shadow mb-2">
-                    <figure>
-                        <img src="{{asset('images/products/'.$item->image)}}" alt="banner" m>
-                    </figure>
-                    <div class="banner-layer banner-layer-bottom m-5">
-                        <h3 class="m-b-2">{{$item->name}}</h3>
-                        <h4 class="m-b-4 text-primary"><sup class="text-dark"><del>20%</del></sup>30%<sup>OFF</sup></h4>
-                        <a href="{{route('products.shop',$item->business_id)}}" class="text-dark text-uppercase ls-10">Shop Now</a>
-                    </div>
-                </div><!-- End .banner --> --}}
+
                     <div class="product-default inner-quickview inner-icon">
                         <figure>
                             <a href="{{route('products.shop',$item->business_id)}}">

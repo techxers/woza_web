@@ -38,7 +38,18 @@
                         @endforeach
                     @endif
                     @csrf
-                    <input type="number" class="form-control" placeholder="Phone Number" name="mobile" required>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <select name="country_code" id="" class="form-control" >
+                                @foreach ($countries as $item)
+                                    <option style="padding-right:20px" value="{{$item ->phonecode}}" {{$item ->phonecode==254 ? 'selected':''}} > +{{$item ->phonecode.' '.$item->name}} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="number" name="mobile" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                    </div>
                     <input type="password" class="form-control" placeholder="Password" name="password" required>
 
                     <div class="form-footer">

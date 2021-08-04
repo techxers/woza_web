@@ -21,7 +21,7 @@ class NotificationController extends Controller
     public function customerindex()
     {
         $user=Auth::user();
-        $notifications= Notification::where('to',$user->userId)->get();
+        $notifications= Notification::where('to',$user->userId)->paginate(10);
         return view('notifications.customer.index',compact('notifications'));
     }
     public function show($id)

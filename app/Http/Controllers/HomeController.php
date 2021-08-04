@@ -124,39 +124,6 @@ class HomeController extends Controller
         $countries=Country::orderBy('name','ASC')->get();
         return view('customer.index',compact('featured_products','featured_products2','featured_shops','all_products','countries','services','shops','businesses','products','totalPrice'));
     }
-    public function index2()
-    {
-       if(Auth::check())
-       {
-            if(Auth::user()->uType==1)
-            {
-                return redirect()->route('partner.dashboard');
-            }
-       }
-        
-       $services=Category::where('type',0)->get();
-       $shops=Category::where('type',1)->get();
-
-        $businesses=Business::all();
-       
-       
-        $featured_shops=Business::all()->random(10);
-        $i=1;
-        
-        $featured_products=Product::all()->random(3);
-        $featured_products2=Product::all()->random(3);
-       $products=null;
-       $totalPrice=0;
-       if(Session::has('cart')){
-            $oldCart=Session::get('cart');
-            $cart=new Cart($oldCart);
-            $products=$cart->items;$totalPrice=$cart->totalPrice;
-            $totalPrice=$cart->totalPrice;
-        }
-        $all_products=Product::all();
-        $countries=Country::orderBy('name','ASC')->get();
-        return view('customer.index2',compact('featured_products','featured_products2','featured_shops','all_products','countries','services','shops','businesses','products','totalPrice'));
-    }
     public function contact()
     {
         $products=null;

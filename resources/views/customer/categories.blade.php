@@ -7,7 +7,8 @@
 @section('content')
 <main class="main">
     <div class="category-banner-container bg-gray">
-        <div class="category-banner banner text-uppercase" style="background: no-repeat 60%/cover url('assets/images/banners/banner-top.jpg');">
+        <?php $i=random_int(1,20);?>
+        <div class="category-banner banner text-uppercase" style="background: no-repeat 60%/cover url({{asset('woza/assets/images/splash/splash'.$i.'.jpg')}});">
             <div class="container position-relative">
                 <div class="row">
                     <div class="pl-lg-5 pb-5 pb-md-0 col-md-5 col-xl-4 col-lg-4 offset-1">
@@ -31,13 +32,11 @@
             <div class="col-6 col-sm-4 col-md-3 product-default inner-quickview inner-icon">
                 <figure>
                     <a href="{{route('products.shop',$item->id)}}">
-                        <img class="rounded-circle" src="{{asset('images/'.$item->logo)}}">
+                        <img class="rounded" src="{{asset('images/'.$item->logo)}}">
                     </a>
                     <div class="label-group">
-                        <div class="product-label label-hot">{{$item->category}}</div>
-                       
-                    </div>
-                   
+                        <div class="product-label label-hot">{{$item->category}}</div>          
+                    </div>     
                     <a href="{{route('products.shop',$item->id)}}" class="btn-quickview" title="Quick View">View Shop</a> 
                 </figure>
                 <div class="product-details">
@@ -80,24 +79,7 @@
             
         </div><!-- End .row -->
 
-         <nav class="toolbox toolbox-pagination border-0">
-            <ul class="pagination toolbox-item">
-                <li class="page-item disabled">
-                    <a class="page-link page-link-btn" href="#"><i class="icon-angle-left"></i></a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><span class="page-link">...</span></li>
-                <li class="page-item">
-                    <a class="page-link page-link-btn" href="#"><i class="icon-angle-right"></i></a>
-                </li>
-            </ul>
-        </nav> 
+         
     </div><!-- End .container -->
 
     <div class="mb-3"></div><!-- margin -->

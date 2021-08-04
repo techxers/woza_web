@@ -62,8 +62,9 @@
                
             </div><!-- End .col-lg-9 -->
         </div><!-- End .row -->
+        {{$notifications->links()}}
     </div><!-- End .container -->
-
+   
     <div class="mb-6"></div><!-- margin -->
 </main><!-- End .main -->
 @endsection
