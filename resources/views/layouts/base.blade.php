@@ -55,7 +55,7 @@
 								<ul>
 									<li class="h6 text-white mt-2"><a href="{{route('about')}}">About</a></li>
 									<li class="h6 text-white mt-2"><a href="{{route('contact')}}">Contact</a></li>
-									<li class="h6 text-white mt-2"><a href="{{route('partner.signup')}}">Join Woza Partner</a></li>
+									<li class="h6 text-white mt-2"><a href="{{route('partner.signup')}}">Join Woza Business</a></li>
 								</ul>
 							</div><!-- End .header-menu -->
 						</div><!-- End .header-dropown -->
@@ -304,16 +304,16 @@
 									</li>
 								</ul>
 								<div class="social-icons">
-									<a href="#" style="{{Route::currentRouteName()=='home.index2' ? 'color: rgb(227,95,33)':''}}" class="social-icon social-facebook icon-facebook text-white border-primary bg-primary"  target="_blank" title="Facebook"></a>
-									<a href="#" style="{{Route::currentRouteName()=='home.index2' ? 'color: rgb(227,95,33)':''}}" class="social-icon social-twitter icon-twitter text-white border-primary bg-primary" target="_blank" title="Twitter"></a>
-									<a href="#" style="{{Route::currentRouteName()=='home.index2' ? 'color: rgb(227,95,33)':''}}" class="social-icon social-linkedin fab fa-linkedin-in text-white border-primary bg-primary" target="_blank" title="Linkedin"></a>
+									<a href="#"  class="social-icon social-facebook icon-facebook text-white border-0 bg-primary"  target="_blank" title="Facebook"></a>
+									<a href="#"  class="social-icon social-twitter icon-twitter text-white border-0 bg-primary" target="_blank" title="Twitter"></a>
+									<a href="#"  class="social-icon social-linkedin fab fa-linkedin-in text-white border-0 bg-primary" target="_blank" title="Linkedin"></a>
 								</div><!-- End .social-icons -->
 							</div><!-- End .widget -->
 						</div><!-- End .col-lg-3 -->
 
 						<div class="col-lg-3 col-sm-6 pb-5 pb-sm-0">
 							<div class="widget">
-								<h4 class="widget-title pb-1" style="{{Route::currentRouteName()=='home.index2' ? 'color: rgb(227,95,33)':''}}">Customer Service</h4>
+								<h4 class="widget-title pb-1" >Customer Service</h4>
 
 								<ul class="links">
 									

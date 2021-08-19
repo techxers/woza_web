@@ -62,7 +62,7 @@
                             </div><!-- End .col-sm-4 -->
 
                             <div class="col-sm-4">
-                                <label for="cemail" class="sr-only">Name</label>
+                                <label for="cemail" class="sr-only">Email</label>
                                 <input type="email" class="form-control" id="cemail" placeholder="Email *" required>
                             </div><!-- End .col-sm-4 -->
 
@@ -79,7 +79,7 @@
                         <textarea class="form-control" cols="30" rows="4" id="cmessage" required placeholder="Message *"></textarea>
                         
                         <div class="text-center">
-                            <button type="submit" class="btn btn-outline-primary-2 btn-minwidth-sm">
+                            <button type="submit" class="btn btn-primary btn-minwidth-sm">
                                 <span>SUBMIT</span>
                                 <i class="icon-long-arrow-right"></i>
                             </button>

@@ -115,7 +115,7 @@
                                 <a href="{{route('categories',$item->title)}}">
                                 @endif
                     
-                                    <img class="" src="{{asset('images/'.$item->icon)}}">
+                                    <img class="" src="{{asset('images/'.$item->icon)}}" style="width: 270px;height:270px;">
                                 </a>
                                 <div class="label-group">
                                     <div class="product-label label-hot">PRODUCT</div>
@@ -159,7 +159,7 @@
                         <div class="product-default inner-quickview inner-icon">
                             <figure>
                                 <a href="{{route('services',$item->title)}}">
-                                    <img class="" src="{{asset('images/'.$item->icon)}}">
+                                    <img class="" src="{{asset('images/'.$item->icon)}}" style="width: 270px;height:270px;">
                                 </a>
                                 <div class="label-group">
                                     <div class="product-label label-sale">SERVICE</div>

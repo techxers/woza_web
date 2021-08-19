@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('title')
-    <title>Register Partner</title>
+    <title>Register Business</title>
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <div class="heading">
-                    <h2 class="title">Register as a Partner</h2>
+                    <h2 class="title">Register as a Business</h2>
                 </div><!-- End .heading -->
                 @if ($errors->any())
                     @foreach ($errors->all() as $item)
