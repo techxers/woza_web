@@ -68,10 +68,10 @@
                             </a>
                         </div><!-- End .col-6 -->
                         <div class="col-sm-6">
-                            <a href="{{route('login.facebook')}}" class="btn btn-login btn-f">
+                            {{-- <a href="{{route('login.facebook')}}" class="btn btn-login btn-f">
                                 <i class=" icon-facebook btn btn-facebook btn-sm text-white " ></i>
                                 Login With Facebook
-                            </a>
+                            </a> --}}
                         </div><!-- End .col-6 -->
                     </div><!-- End .row -->
                 </div><!-- End .form-choice -->

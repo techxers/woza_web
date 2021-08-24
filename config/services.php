@@ -35,9 +35,9 @@ return [
         'redirect' => 'http://localhost:8000/callback/facebook',
     ],
     'google' => [
-        'client_id' => '299453305479-jp2st8cr2s9hk0s3c9g83iqm4dtu3bkt.apps.googleusercontent.com',
-        'client_secret' => 'vPuFG0YZGgMBwp-GRMMgBNJP',
-        'redirect' => 'http://localhost:8000/callback/google',
+        'client_id' => '72459765452-tvqvul8inqpmbls3pp2en4q8rpnsmeom.apps.googleusercontent.com',
+        'client_secret' => 'u_LmLTvMkas_jlkn39FFvrKG',
+        'redirect' => 'https://wozaglobal.com/callback/google',
     ],
 
 ];
