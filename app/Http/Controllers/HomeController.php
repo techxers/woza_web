@@ -106,12 +106,19 @@ class HomeController extends Controller
        $shops=Category::where('type',1)->get();
 
         $businesses=Business::all();
-       
-       
-        $featured_shops=Business::all()->random(10);
+        $featured_shops=Business::all();
+        $featured_products=Product::all();
+        $featured_products2=Product::all();
+       if($businesses->count()>0)
+       {
+            $featured_shops=Business::all()->random(10);
+       }
+       if($featured_products->count()>0)
+       {
+           $featured_products=Product::all()->random(3);
+            $featured_products2=Product::all()->random(3);
+       }
         
-        $featured_products=Product::all()->random(3);
-        $featured_products2=Product::all()->random(3);
        $products=null;
        $totalPrice=0;
        if(Session::has('cart')){
