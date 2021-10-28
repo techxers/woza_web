@@ -70,9 +70,12 @@ class RegisterController extends Controller
         {
             return redirect()->route('signin')->withErrors($validate)->with('code','login');
         }
+        
         else{
-            $credentials = $request->only('mobile', 'password');
-            if (Auth::attempt($credentials)) {
+            // $credentials = $request->only('mobile', 'password');
+            //if (Auth::attempt($credentials)) {
+                $user=User::where('mobile',$request->mobile)->first();
+            if (Auth::login($user)) {
                 $user=User::where('mobile',$request->mobile)->first();
                 
                 if($user->uType==0||$user->uType=='-'||$user->uType==NULL)
@@ -154,7 +157,8 @@ class RegisterController extends Controller
             'uType'=>$data['user_type'],
             'country_code'=>$data['country_code'],
             'roleId'=>4,
-            'password' => Hash::make($data['password']),
+            // 'password' => Hash::make($data['password']),
+            'password'=>md5($data['password'])
         ]);
     }
     
