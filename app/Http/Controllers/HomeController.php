@@ -109,14 +109,23 @@ class HomeController extends Controller
         $featured_shops=Business::all();
         $featured_products=Product::all();
         $featured_products2=Product::all();
-       if($businesses->count()>0)
+       if($businesses->count()>10)
        {
             $featured_shops=Business::all()->random(10);
        }
-       if($featured_products->count()>0)
+       else 
+       {
+            $featured_shops=Business::all();
+       }
+       if($featured_products->count()>3)
        {
            $featured_products=Product::all()->random(3);
             $featured_products2=Product::all()->random(3);
+       }
+       else
+       {
+        $featured_products=Product::all();
+        $featured_products2=Product::all();
        }
         
        $products=null;
