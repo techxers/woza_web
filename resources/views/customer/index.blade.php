@@ -88,7 +88,7 @@
                         <div class="product-details">
                             <div class="category-wrap">
                                 <div class="category-list">
-                                    <a href="{{route('products.shop',$item->business_id)}}" class="product-category h1">{{$item->category->title}}</a>
+                                    <a href="{{route('products.shop',$item->business_id)}}" class="product-category h1">{{isset($item->category) ? $item->category->title : 'General'}}</a>
                                 </div>
                                 <a href="#" class="btn-icon-wish"><i class="icon-heart"></i></a>
                             </div>

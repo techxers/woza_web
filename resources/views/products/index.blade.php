@@ -47,7 +47,7 @@
                                     <tr class="tr-shadow">
                                         <td><img class="rounded-circle" src="{{asset('images/products/'.$item->image)}}" alt=""></td>
                                         <td>{{$item->name}}</td>
-                                        <td>{{$item->category->title}} </td>
+                                        <td>{{isset($item->category) ? $item->category->title : 'General'}} </td>
                                         <td class="desc">{{$item->description}}</td>
                                         <td>{{$item->qut}}</td>
                                         <td>
