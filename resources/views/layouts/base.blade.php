@@ -86,13 +86,7 @@
 							<form action="{{route('search')}}" method="get">
 								<div class="header-search-wrapper">
 									<input type="search" style="border: 1px solid rgb(227,95,33);background-color:white;" class="form-control" name="q" id="q" placeholder="Search..." required>
-									<div class="select-custom" style="background-color:rgb(227,95,33);color:white">
-										<select id="cat" name="type" style="background-color:white;color:rgb(227,95,33);border: 1px solid rgb(227,95,33)">
-											<option value="1">Products</option>
-											<option value="2">Services</option>
-											<option value="3">Shop</option>
-										</select>
-									</div><!-- End .select-custom -->
+								
 									<button class="btn p-0 icon-search-3" type="submit" style="background-color:rgb(227,95,33);color:white;"></button>
 								</div><!-- End .header-search-wrapper -->
 							</form>

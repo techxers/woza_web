@@ -75,6 +75,10 @@ class RegisterController extends Controller
             // $credentials = $request->only('mobile', 'password');
             //if (Auth::attempt($credentials)) {
                 $user=User::where('mobile',$request->mobile)->first();
+                if(!$user)
+                {
+                    return redirect()->route('signin')->withErrors('Either mobile number or password is incorrect.')->with('code','login');
+                }
             if (Auth::login($user)) {
                 $user=User::where('mobile',$request->mobile)->first();
                 

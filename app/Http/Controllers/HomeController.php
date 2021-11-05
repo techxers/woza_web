@@ -55,14 +55,14 @@ class HomeController extends Controller
         $formattedAddrTo     = str_replace(' ', '+', $addressTo);
         
         // Geocoding API request with start address
-        $geocodeFrom = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address='.$formattedAddrFrom.'&sensor=false&key='.$apiKey);
+        $geocodeFrom = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($formattedAddrFrom).'&sensor=false&key='.$apiKey);
         $outputFrom = json_decode($geocodeFrom);
         if(!empty($outputFrom->error_message)){
             return redirect()->back()->with('error',$outputFrom->error_message);
         }
         
         // Geocoding API request with end address
-        $geocodeTo = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address='.$formattedAddrTo.'&sensor=false&key='.$apiKey);
+        $geocodeTo = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($formattedAddrTo).'&sensor=false&key='.$apiKey);
         $outputTo = json_decode($geocodeTo);
         if(!empty($outputTo->error_message)){
             return redirect()->back()->with('error',$outputTo->error_message);
@@ -170,26 +170,20 @@ class HomeController extends Controller
     }
     public function search(Request $request)
     {
-        $query=$request->q;
-        $type=$request->type;
-        
-        $results=null;
-        if($type==1)
-        {
-            $results=Product::where('name','like','%'.$query.'%')->orWhere('description','like','%'.$query.'%')->get();
-        }
-       else if($type==2)
-       {
-        $results=Business::where('category','like','%'.$query.'%')->orWhere('shop_cat','like','%'.$query.'%')->get();
-       }
-       else if($type==3)
-       {
-        $results=Business::where('title','like','%'.$query.'%')->orWhere('category','like','%'.$query.'%')->orWhere('shop_cat','like','%'.$query.'%')->get();
-       }
-       $results=$this->paginate($results);
+     
+       $query=$request->q;
+        $searchproducts=Product::where('name','like','%'.$query.'%')->orWhere('description','like','%'.$query.'%')->get();
+       
+        $services=Business::where('category','like','%'.$query.'%')->orWhere('shop_cat','like','%'.$query.'%')->get();
+       
+        $shops=Business::where('title','like','%'.$query.'%')->orWhere('category','like','%'.$query.'%')->orWhere('shop_cat','like','%'.$query.'%')->get();
+       
+       $searchproducts=$this->paginate($searchproducts);
+       $services=$this->paginate($services);
+       $shops=$this->paginate($shops);
        $products=$this->products;
        $totalPrice=$this->totalPrice;
-        return view('customer.results',compact('results','query','type','products','totalPrice'));
+        return view('customer.results',compact('searchproducts','services','shops','query','products','totalPrice'));
     }
    
     public function location(Request $request)

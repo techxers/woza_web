@@ -35,7 +35,7 @@ Route::get('/callback/facebook', [RegisterController::class,'callback']);
 Route::get('/redirect/google',[RegisterController::class,'googleredirect'])->name('login.google');
 Route::get('/callback/google', [RegisterController::class,'googlecallback']);
 
-Route::get('home/home', [HomeController::class, 'index'])->name('home');
+//Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('about', [HomeController::class, 'about'])->name('about');
 
