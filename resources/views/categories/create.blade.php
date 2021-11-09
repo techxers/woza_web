@@ -45,7 +45,7 @@
                                 </div>
                                
                                 <div>
-                                    <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                    <button  type="submit" class="btn btn-lg btn-info btn-block">
                                         <i class="fa fa-plus fa-lg"></i>&nbsp;
                                         <span id="payment-button-amount">Add Category</span>
                                         <span id="payment-button-sending" style="display:none;">Adding…</span>
