@@ -91,7 +91,7 @@
                                     
                                     </a>
                                     <div class="label-group">
-                                        <div class="product-label {{$type==1 ? 'label-hot':'label-sale'}}">{{$type==1 ? 'PRODUCT':($type==2 ? 'SERVICE':'SHOP')}}</div>
+                                        <div class="product-label label-hot">PRODUCT</div>
                                     </div>
                                 
                                         <a href="{{route('products.shop',$item->business_id)}}" class="btn btn-primary btn-block text-white" title="Quick View">View Product</a>

@@ -56,6 +56,10 @@ class HomeController extends Controller
         
         // Geocoding API request with start address
         $geocodeFrom = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($formattedAddrFrom).'&sensor=false&key='.$apiKey);
+        if(!$geocodeFrom)
+        {
+            return redirect()->back()->with('error','There was an error with getting your location details. Try again');
+        }
         $outputFrom = json_decode($geocodeFrom);
         if(!empty($outputFrom->error_message)){
             return redirect()->back()->with('error',$outputFrom->error_message);
@@ -63,6 +67,10 @@ class HomeController extends Controller
         
         // Geocoding API request with end address
         $geocodeTo = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($formattedAddrTo).'&sensor=false&key='.$apiKey);
+       if(!$geocodeTo)
+        {
+            return redirect()->back()->with('error','There was an error with getting your location details. Try again');
+        }
         $outputTo = json_decode($geocodeTo);
         if(!empty($outputTo->error_message)){
             return redirect()->back()->with('error',$outputTo->error_message);
